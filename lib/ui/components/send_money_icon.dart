@@ -1,4 +1,4 @@
-import 'package:fintech_mobile_app/ui/constants/button_icon_background_color.dart';
+import 'package:fintech_mobile_app/ui/constants/button_icon_color.dart';
 import 'package:flutter/material.dart';
 
 class SendMoneyButton extends StatelessWidget {

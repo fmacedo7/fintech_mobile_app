@@ -9,6 +9,7 @@ class CustomIconButton extends StatelessWidget {
   final Size? minimumSize;
   final Color backgroundColor;
   final double padding;
+  final Text? text;
 
   const CustomIconButton({
     super.key,
@@ -19,7 +20,7 @@ class CustomIconButton extends StatelessWidget {
     this.shape,
     this.minimumSize,
     required this.backgroundColor,
-    this.padding = 15,
+    this.padding = 15, this.text,
   });
 
   @override
@@ -35,8 +36,7 @@ class CustomIconButton extends StatelessWidget {
             WidgetStateProperty.all<Size>(minimumSize ?? const Size(48, 48)),
         backgroundColor: WidgetStateProperty.all<Color>(backgroundColor),
         iconColor: WidgetStateProperty.all<Color>(Colors.black),
-        padding: WidgetStateProperty.all<EdgeInsets>(
-            EdgeInsets.all(padding)),
+        padding: WidgetStateProperty.all<EdgeInsets>(EdgeInsets.all(padding)),
       ).merge(style),
     );
   }
