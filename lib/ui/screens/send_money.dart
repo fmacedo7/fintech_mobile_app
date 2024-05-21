@@ -84,17 +84,17 @@ class _SendMoneyState extends State<SendMoney> {
                       CircleAvatar(
                         radius: 35,
                         backgroundImage:
-                            AssetImage('assets/img_profiles/gideoes.jpg'),
+                            AssetImage('assets/img_profiles/angelic.jpg'),
                       ),
                       CircleAvatar(
                         radius: 35,
                         backgroundImage:
-                            AssetImage('assets/img_profiles/juliete.jpg'),
+                            AssetImage('assets/img_profiles/redqueen.jpg'),
                       ),
                       CircleAvatar(
                         radius: 35,
                         backgroundImage:
-                            AssetImage('assets/img_profiles/caic.jpg'),
+                            AssetImage('assets/img_profiles/vampire.jpg'),
                       ),
                       CircleAvatar(
                         radius: 35,
