@@ -207,6 +207,9 @@ class _SendMoneyState extends State<SendMoney> {
                           ),
                         ),
                         minimumSize: Size(screenWidth * 0.42, buttonHeight),
+                        onClick: (){
+                          Navigator.pop(context);
+                        },
                       ),
                       CustomIconButtonOutlined(
                         backgroundColor: const Color.fromRGBO(217, 255, 126, 1),
