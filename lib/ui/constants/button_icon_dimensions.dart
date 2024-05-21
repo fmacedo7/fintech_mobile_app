@@ -1,3 +1,4 @@
 import 'package:flutter/material.dart';
 
-const double buttonIconHeight = 70;
+const double buttonHeight = 70;
+const double buttonWidth = 70;

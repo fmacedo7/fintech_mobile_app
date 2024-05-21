@@ -1,238 +1,252 @@
+import 'package:fintech_mobile_app/ui/components/glassy_button.dart';
 import 'package:fintech_mobile_app/ui/components/icon_button.dart';
-import 'package:fintech_mobile_app/ui/components/icon_button_outlined.dart';
+import 'package:fintech_mobile_app/ui/components/operations_card.dart';
 import 'package:fintech_mobile_app/ui/components/send_money_icon.dart';
+import 'package:fintech_mobile_app/ui/constants/button_icon_color.dart';
+import 'package:fintech_mobile_app/ui/constants/button_icon_dimensions.dart';
+import 'package:fintech_mobile_app/ui/screens/send_money.dart';
 import 'package:flutter/material.dart';
-import '../constants/button_icon_color.dart';
-import '../constants/button_icon_dimensions.dart';
 
-class HomeScreen extends StatefulWidget {
+class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen> {
-  @override
   Widget build(BuildContext context) {
-    // double screenWidth = MediaQuery.of(context).size.width;
+    double screenWidth = MediaQuery.of(context).size.width;
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: Colors.white,
         body: SafeArea(
           child: Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.fromLTRB(15, 30, 20, 15),
             child: Column(
               children: [
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    CustomIconButton(
-                      icon: const Icon(Icons.arrow_back_ios_new_outlined),
-                      backgroundColor: customButtonBackgroundColor,
-                      padding: 10,
-                      iconSize: 18,
-                      onPressed: () {},
+                    const Row(
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.only(right: 10),
+                          child: Icon(
+                            Icons.monetization_on_outlined,
+                            size: 40,
+                          ),
+                        ),
+                        Text(
+                          'Fingen Bank',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20,
+                          ),
+                        ),
+                      ],
                     ),
-                    const Expanded(
-                      child: Row(),
-                    ),
-                    CustomIconButton(
-                      icon: const Icon(Icons.wallet),
-                      backgroundColor: customButtonBackgroundColor,
-                      minimumSize: const Size(95, buttonIconHeight),
-                      onPressed: () {},
-                    ),
-                    const SizedBox(
-                      width: 10,
-                    ),
-                    CustomIconButton(
-                      icon: const Icon(Icons.currency_exchange_outlined),
-                      backgroundColor: customButtonBackgroundColor,
-                      minimumSize: const Size(95, buttonIconHeight),
-                      onPressed: () {},
+                    Container(
+                      width: 100,
+                      height: 45,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(40),
+                        color: Colors.black,
+                      ),
+                      child: Row(
+                        children: [
+                          IconButton(
+                            onPressed: () {},
+                            icon:
+                                const Icon(Icons.dashboard_customize_outlined),
+                            color: Colors.white,
+                          ),
+                          const Text(
+                            'More',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold),
+                          ),
+                        ],
+                      ),
                     ),
                   ],
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 25, bottom: 25),
+                  child: Row(
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Text(
+                            'Your Balance',
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 35,
+                              wordSpacing: 3,
+                              letterSpacing: 3,
+                            ),
+                          ),
+                          Row(
+                            children: [
+                              const Text(
+                                '\$13,451',
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 35,
+                                  letterSpacing: 3,
+                                ),
+                              ),
+                              Container(
+                                width: 30,
+                                height: 20,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(7),
+                                  color: const Color.fromRGBO(140, 190, 20, 1),
+                                ),
+                                child: const Center(
+                                  child: Text(
+                                    '2%',
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
                 const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(
-                      'Send\nMoney',
-                      style:
-                          TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
-                    ),
-                    SendMoneyButton(),
+                    GlassyButton(
+                        text: 'Add Invoice', icon: Icons.edit_note_outlined),
+                    GlassyButton(text: 'Loyalty', icon: Icons.percent_outlined),
+                    GlassyButton(text: 'Exchange', icon: Icons.swap_horiz),
                   ],
                 ),
-                const Divider(),
-                const Padding(
-                  padding: EdgeInsets.only(top: 8, bottom: 20),
+                Padding(
+                  padding: const EdgeInsets.only(top: 20, bottom: 20),
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      CircleAvatar(
-                        radius: 35,
-                        backgroundImage:
-                            AssetImage('assets/img_profiles/gideoes.jpg'),
+                      DoubleIcon(
+                        rightIcon: const Icon(Icons.arrow_forward),
+                        text: 'Send Money',
+                        leftIcon: const Icon(Icons.paid_outlined),
+                        rightIconBackgroundColor:
+                            const Color.fromRGBO(176, 214, 96, 1),
+                        backgroundColor: const Color.fromRGBO(217, 255, 126, 1),
+                        leftBackgroundIconSize: const Size(55, 55),
+                        leftIconPadding:
+                            const EdgeInsets.only(left: 7, right: 7),
+                        widthButton: screenWidth * 0.66,
+                        onClick: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const SendMoney()));
+                        },
                       ),
-                      CircleAvatar(
-                        radius: 35,
-                        backgroundImage:
-                            AssetImage('assets/img_profiles/juliete.jpg'),
-                      ),
-                      CircleAvatar(
-                        radius: 35,
-                        backgroundImage:
-                            AssetImage('assets/img_profiles/caic.jpg'),
-                      ),
-                      CircleAvatar(
-                        radius: 35,
+                      const Expanded(child: Row()),
+                      CustomIconButton(
+                        icon: const Icon(Icons.view_cozy_outlined),
                         backgroundColor: customButtonBackgroundColor,
-                        child: Icon(Icons.add),
+                        minimumSize: const Size(buttonWidth, buttonHeight),
+                        onPressed: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => const SendMoney()));
+                        },
                       ),
                     ],
                   ),
                 ),
                 Container(
+                  height: 220,
+                  width: screenWidth,
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(25),
-                    color: customButtonBackgroundColor,
+                    borderRadius: BorderRadius.circular(30),
+                    color: Colors.black,
                   ),
                   child: const Padding(
-                    padding: EdgeInsets.all(8.0),
+                    padding: EdgeInsets.symmetric(vertical: 13, horizontal: 15),
                     child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Padding(
-                          padding: EdgeInsets.only(bottom: 60),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              CircleAvatar(
-                                radius: 35,
-                                backgroundImage:
-                                    AssetImage('assets/img_logo/fbc.jpg'),
-                              ),
-                              Text(
-                                'Federal Government',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 18,
-                                ),
-                              ),
-                              CustomIconButtonOutlined(
-                                icon: Icons.edit_square,
-                                backgroundColor: customButtonBackgroundColor,
-                                minimumSize: Size(65, 65),
-                              )
-                            ],
-                          ),
-                        ),
-                        Text(
-                          'Montly Payment',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 14,
-                          ),
-                        ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Stack(
-                              alignment: Alignment.topCenter,
-                              children: [
-                                Text(
-                                  '\$26.999',
-                                  style: TextStyle(
-                                      fontSize: 35, // Tamanho da fonte
-                                      color: Colors.black,
-                                      fontWeight:
-                                          FontWeight.bold // Cor do texto
-                                      ),
-                                ),
-                                Positioned(
-                                  top: 6,
-                                  left: 135,
-                                  child: Text(
-                                    ',99',
-                                    style: TextStyle(
-                                      fontSize: 16, // Tamanho da fonte
-                                      color: Colors.grey, // Cor do texto
-                                      fontStyle: FontStyle.italic, // Itálico
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                            CustomIconButtonOutlined(
-                              icon: Icons.arrow_forward,
-                              backgroundColor: customButtonBackgroundColor,
-                              minimumSize: Size(105, buttonIconHeight),
-                              shape: 40,
-                              leftText: Text(
-                                'All',
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold, fontSize: 18),
+                            Text(
+                              'Operations',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20,
+                                letterSpacing: 2.5,
                               ),
                             ),
+                            Icon(
+                              Icons.insights,
+                              color: Colors.white,
+                              size: 27,
+                            )
                           ],
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(top: 15, bottom: 15),
+                          child: Column(
+                            children: [
+                              OperationsCard(
+                                logoImage:
+                                    AssetImage('assets/img_logo/fbc.jpg'),
+                                institutionTitle: 'Federal Government',
+                                periodType: 'Monthly payment',
+                                operationValue: '26.999',
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(top: 15),
+                                child: OperationsCard(
+                                    logoImage: AssetImage(
+                                        'assets/img_logo/beretta.png'),
+                                    institutionTitle: 'Beretta Company',
+                                    periodType: 'Monthly payment',
+                                    operationValue: '700'),
+                              ),
+                            ],
+                          ),
                         ),
                       ],
                     ),
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 20, bottom: 50),
+                const Padding(
+                  padding: EdgeInsets.only(top: 15),
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      const CustomIconButtonOutlined(
-                        backgroundColor: customButtonBackgroundColor,
-                        leftText: Text(
-                          'Test',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 18,
-                          ),
-                        ),
-                        minimumSize: Size(170, buttonIconHeight),
+                      CustomIconButton(
+                        icon: Icon(Icons.house_sharp),
+                        backgroundColor: Color.fromRGBO(216, 253, 125, 1.0),
+                        minimumSize: Size(52, 52),
                       ),
-                      CustomIconButtonOutlined(
-                        backgroundColor: const Color.fromRGBO(217, 255, 126, 1),
-                        leftText: const Text(
-                          'Next',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 18,
-                          ),
-                        ),
-                        minimumSize: const Size(170, buttonIconHeight),
-                        onClick: () {},
+                      CustomIconButton(
+                        icon: Icon(Icons.blur_circular_outlined),
+                        backgroundColor: Colors.transparent,
+                        minimumSize: Size(52, 52),
+                      ),
+                      CustomIconButton(
+                        icon: Icon(Icons.person_outline),
+                        backgroundColor: Colors.transparent,
+                        minimumSize: Size(52, 52),
+                      ),
+                      CustomIconButton(
+                        icon: Icon(Icons.currency_exchange_outlined),
+                        backgroundColor: Colors.transparent,
+                        minimumSize: Size(52, 52),
                       ),
                     ],
                   ),
-                ),
-                const Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    Text(
-                      'Privacy Policy',
-                      style: TextStyle(
-                        color: Colors.grey,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 15,
-                      ),
-                    ),
-                    Text(
-                      'Terms of Use',
-                      style: TextStyle(
-                        color: Colors.grey,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16,
-                      ),
-                    ),
-                  ],
                 ),
               ],
             ),
