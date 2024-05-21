@@ -5,8 +5,9 @@ class MonthlyGraphics extends StatelessWidget {
   final int graphicValue;
   final String graphicMonth;
   final Color graphicColor;
+  final double graphicHeight;
 
-  const MonthlyGraphics({super.key, required this.graphicValue, required this.graphicMonth, required this.graphicColor});
+  const MonthlyGraphics({super.key, required this.graphicValue, required this.graphicMonth, required this.graphicColor, required this.graphicHeight});
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +25,7 @@ class MonthlyGraphics extends StatelessWidget {
           const EdgeInsets.only(top: 5, bottom: 10),
           child: Container(
             width: screenWidth * 0.25,
-            height: screenWidth * 0.35,
+            height: graphicHeight,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(30),
               color: graphicColor,
