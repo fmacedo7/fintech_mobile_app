@@ -64,8 +64,7 @@ class PaymentStatistic extends StatelessWidget {
                     leftBackgroundIconSize: const Size(55, 55),
                     rightIconBackgroundColor:
                         const Color.fromRGBO(176, 214, 96, 1),
-                    leftIconPadding:
-                        const EdgeInsets.only(left: 8.5, right: 5),
+                    leftIconPadding: const EdgeInsets.only(left: 8.5, right: 5),
                     backgroundColor: const Color.fromRGBO(216, 253, 125, 1.0),
                     widthButton: screenWidth,
                   ),
@@ -77,12 +76,13 @@ class PaymentStatistic extends StatelessWidget {
                     borderRadius: BorderRadius.circular(25),
                     color: Colors.black,
                   ),
-                  child: const Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 15, vertical: 15),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
+                        const Text(
                           'Money turnover',
                           style: TextStyle(
                               color: Colors.white,
@@ -96,18 +96,23 @@ class PaymentStatistic extends StatelessWidget {
                               MonthlyGraphics(
                                 graphicValue: 300,
                                 graphicMonth: 'Mar',
-                                graphicColor: Color.fromRGBO(45, 49, 36, 1.0),
+                                graphicHeight: screenWidth * 0.4,
+                                graphicColor:
+                                    const Color.fromRGBO(45, 49, 36, 1.0),
                               ),
                               MonthlyGraphics(
                                 graphicValue: 100,
                                 graphicMonth: 'Apr',
+                                graphicHeight: screenWidth * 0.25,
                                 graphicColor:
-                                    Color.fromRGBO(216, 253, 125, 1.0),
+                                    const Color.fromRGBO(216, 253, 125, 1.0),
                               ),
                               MonthlyGraphics(
                                 graphicValue: 200,
                                 graphicMonth: 'May',
-                                graphicColor: Color.fromRGBO(83, 95, 56, 1.0),
+                                graphicHeight: screenWidth * 0.35,
+                                graphicColor:
+                                    const Color.fromRGBO(83, 95, 56, 1.0),
                               ),
                             ],
                           ),
@@ -133,13 +138,19 @@ class PaymentStatistic extends StatelessWidget {
                             children: [
                               Text(
                                 '4',
-                                style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
+                                style: TextStyle(
+                                    fontSize: 35, fontWeight: FontWeight.bold),
                               ),
                             ],
                           ),
                           Column(
                             children: [
-                              Text('months', style: TextStyle(color: Colors.grey, fontWeight: FontWeight.bold),),
+                              Text(
+                                'months',
+                                style: TextStyle(
+                                    color: Colors.grey,
+                                    fontWeight: FontWeight.bold),
+                              ),
                             ],
                           ),
                         ],
