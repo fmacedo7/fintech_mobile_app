@@ -2,7 +2,6 @@ import 'package:fintech_mobile_app/ui/components/icon_button.dart';
 import 'package:fintech_mobile_app/ui/components/icon_button_outlined.dart';
 import 'package:fintech_mobile_app/ui/components/send_money_icon.dart';
 import 'package:fintech_mobile_app/ui/screens/payment_statistic.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../constants/button_icon_color.dart';
 import '../constants/button_icon_dimensions.dart';

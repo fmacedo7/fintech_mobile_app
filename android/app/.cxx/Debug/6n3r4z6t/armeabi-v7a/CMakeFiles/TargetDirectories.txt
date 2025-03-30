@@ -1,0 +1,2 @@
+/home/felizberto/Documents/github/fintech_mobile_app/android/app/.cxx/Debug/6n3r4z6t/armeabi-v7a/CMakeFiles/rebuild_cache.dir
+/home/felizberto/Documents/github/fintech_mobile_app/android/app/.cxx/Debug/6n3r4z6t/armeabi-v7a/CMakeFiles/edit_cache.dir

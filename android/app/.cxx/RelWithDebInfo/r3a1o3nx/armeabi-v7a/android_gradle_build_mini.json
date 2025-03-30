@@ -1,0 +1,20 @@
+{
+  "buildFiles": [
+    "/home/felizberto/development/flutter/packages/flutter_tools/gradle/src/main/groovy/CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "/home/felizberto/development/cmake/3.22.1/bin/ninja",
+      "-C",
+      "/home/felizberto/Documents/github/fintech_mobile_app/android/app/.cxx/RelWithDebInfo/r3a1o3nx/armeabi-v7a",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "/home/felizberto/development/cmake/3.22.1/bin/ninja",
+    "-C",
+    "/home/felizberto/Documents/github/fintech_mobile_app/android/app/.cxx/RelWithDebInfo/r3a1o3nx/armeabi-v7a",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {}
+}

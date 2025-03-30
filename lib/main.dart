@@ -1,6 +1,4 @@
 import 'package:fintech_mobile_app/ui/screens/homescreen.dart';
-import 'package:fintech_mobile_app/ui/screens/payment_statistic.dart';
-import 'package:fintech_mobile_app/ui/screens/send_money.dart';
 import 'package:flutter/material.dart';
 
 void main() {

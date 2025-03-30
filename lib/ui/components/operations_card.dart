@@ -46,7 +46,7 @@ class OperationsCard extends StatelessWidget {
         ),
         const Expanded(child: Row()),
         Text(
-          '-${operationValue}\$',
+          '-$operationValue\$',
           style: const TextStyle(color: Colors.white, fontSize: 19),
         ),
       ],

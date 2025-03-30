@@ -1,0 +1,1 @@
+/home/felizberto/Documents/github/fintech_mobile_app/build/app/intermediates/cxx/RelWithDebInfo/r3a1o3nx/obj/x86
